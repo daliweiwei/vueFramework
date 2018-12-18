@@ -5,8 +5,10 @@ import Vuex from 'vuex'
 import App from './App'
 import router from './router'
 import store from './store'
+import Liang from './utils/liang'
 Vue.config.productionTip = false
 Vue.use('Vuex');
+Vue.use('Liang');
 
 /* eslint-disable no-new */
 new Vue({
