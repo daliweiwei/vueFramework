@@ -33,7 +33,7 @@ axios.interceptors.request.use(config => {
     }
     if (config.method === "post" || config.method === "put" || config.method === "delete") {
         if (config.url != "/auth/token") {
-            config.data = {data: config.data};
+            config.data = {data: JSON.parse(JSON.stringify(config.data))};
         }
     }
     // console.log("请求信息封装后：" + JSON.stringify(config));
