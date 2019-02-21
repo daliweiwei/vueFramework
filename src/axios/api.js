@@ -13,10 +13,7 @@ import stroe from '@store' //状态管理
  axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
  axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=UTF-8';
 
-
-
  // axios.defaults.headers.common['Authorization'] = AUTH_TOKEN;
-
 
 // 添加请求拦截器
 axios.interceptors.request.use(config => {
@@ -28,18 +25,23 @@ axios.interceptors.request.use(config => {
     }
     // console.log("请求信息封装前：" + JSON.stringify(config));
     // console.log("判断请求参数是否包含平台标识字段："+utils.isEmptyObj(config.data.platformFlag) );
-    if (utils.isEmptyObj(config.data.platformFlag) ) {
-        config.data.platformFlag = store.state.user.platform.key;
-    }
-    if (config.method === "post" || config.method === "put" || config.method === "delete") {
-        if (config.url != "/auth/token") {
-            config.data = {data: JSON.parse(JSON.stringify(config.data))};
-        }
-    }
+    
+
+    // if (utils.isEmptyObj(config.data.platformFlag) ) {
+    //     config.data.platformFlag = store.state.user.platform.key;
+    // }
+    // if (config.method === "post" || config.method === "put" || config.method === "delete") {
+    //     if (config.url != "/auth/token") {
+    //         config.data = {data: JSON.parse(JSON.stringify(config.data))};
+    //     }
+    // }
+    
+
     // console.log("请求信息封装后：" + JSON.stringify(config));
     /**
     * 请求时默认添加token
     */
+   
     if (store.state.user.token) {
         config.headers.Authorization = localStorage.token;
     }

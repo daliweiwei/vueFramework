@@ -8,6 +8,7 @@
  * [状态对象]
  * @type {Object}
  */
+import api from '@/axios/api'
 
  const state = {
    addlist:[]
@@ -28,7 +29,17 @@ const mutations = {
  */
 
 const actions = {
-
+    getDemo(context,params) => {
+        api.getDemo(params).then(data => {
+            if(data.code == '000000'){
+                console.log(data.result);
+            }else{
+                console.log(JSON.stringify(data));
+            }
+        }).catch(error => {
+            console.log(JSON.stringify(error));
+        })
+    }
 }
 
 /**
