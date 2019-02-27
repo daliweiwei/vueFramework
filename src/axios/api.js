@@ -3,8 +3,8 @@
  * @type {number}
  */
 import axios from 'axios'
-import utils from '@utils/utils'
-import stroe from '@store' //状态管理
+import utils from '@/utils/utils'
+import stroe from '@/store' //状态管理
 
  // axios.defaults.baseURL = 'https://api.example.com';
  // 解决同服务不同域名出现的跨域问题
