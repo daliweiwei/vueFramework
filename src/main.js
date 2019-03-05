@@ -6,9 +6,12 @@ import App from './App'
 import router from './router'
 import store from './store'
 import Liang from './utils/liang'
+import ElementUI from 'element-ui'
 Vue.config.productionTip = false
+Vue.config.devtools = true;
 Vue.use('Vuex');
 Vue.use('Liang');
+Vue.use('ElementUI');
 
 /* eslint-disable no-new */
 new Vue({

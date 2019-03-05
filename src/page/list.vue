@@ -1,5 +1,10 @@
 <template>
   <div>
+    <div>
+      <h1>{{ $store.state.list.count }}</h1>
+      <button @click="$store.commit('decrement');">-</button>
+      <button @click="$store.commit('increment');">+</button>
+    </div>
     <input type="text" v-model="name">
     <button @click="handleAdd">添加</button>
     <div class="list">

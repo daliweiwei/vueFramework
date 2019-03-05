@@ -9,8 +9,9 @@
  * @type {Object}
  */
 import api from '@/axios/api'
-
+import { Message } from 'element-ui';
  const state = {
+   count: 0,
    addlist:[]
  }
 
@@ -21,6 +22,12 @@ import api from '@/axios/api'
 
 const mutations = {
   setAddlist:(state,data)=> state.addlist = data,
+  increment(state) {
+    state.count += 1;
+  },
+  decrement(state) {
+    state.count -= 1;
+  },
 }
 
 /**
@@ -29,7 +36,10 @@ const mutations = {
  */
 
 const actions = {
-    getDemo(context,params) => {
+    getTest(context,params){
+      Message.error('getTest')
+    },
+    getDemo(context,params){
         api.getDemo(params).then(data => {
             if(data.code == '000000'){
                 console.log(data.result);
