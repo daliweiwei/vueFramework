@@ -8,7 +8,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import VuexPersistence from 'vuex-persist'
 import createMutationsSharer from 'vuex-shared-mutations';
-import list from './list/list'
+import list from './list'
 
 Vue.use(Vuex)
 
